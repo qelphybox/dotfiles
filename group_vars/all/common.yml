@@ -1,0 +1,53 @@
+---
+username: vterdunov
+email: mail2slick@gmail.com
+
+# list of deb packages
+development_deb_packages:
+  - curl
+  - git
+  - meld
+  - python-apt
+  - python-pycurl
+  - python-dev
+  - python-setuptools
+  - python3
+  - python3-venv
+  - shellcheck
+
+common_deb_packages:
+  - undistract-me
+  - plank
+  - numix-gtk-theme
+  - numix-icon-theme-circle
+  - google-chrome-stable
+  - htop
+  - fluxgui
+
+pip_packages:
+  - pylint
+  - ansible-lint
+  - molecule
+
+ruby_gems:
+  - bundler
+  - serverspec
+  - haml-lint
+  - ruby-lint
+  - sqlint
+  - rubocop
+
+ppa:
+  - 'ppa:ricotz/docky'
+  - 'ppa:numix/ppa'
+  - 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main'
+  - 'deb http://download.virtualbox.org/virtualbox/debian xenial contrib'
+  - 'ppa:nathan-renniewaldock/flux'
+
+git_configs:
+  - { name: user.name, value: '{{ username }}' }
+  - { name: user.email, value: '{{ email }}' }
+  - { name: push.default, value: simple }
+  - { name: core.editor, value: '/usr/bin/subl -t -w' }
+  - { name: diff.tool, value: 'meld' }
+  - { name: alias.lg, value: "log --color --graph --pretty=format:\"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset\" --abbrev-commit" }

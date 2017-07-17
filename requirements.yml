@@ -1,5 +1,10 @@
-- src: https://github.com/zzet/ansible-rbenv-role
-  name: rbenv
+- name: rbenv
+  src: https://github.com/zzet/ansible-rbenv-role
+  version: 3.3.1
 
-- src: https://github.com/angstwad/docker.ubuntu
-  name: docker
+- name: docker
+  src: https://github.com/angstwad/docker.ubuntu
+  version: v2.5.2
+
+- name: terminator
+  src: https://github.com/vterdunov/ansible-terminator

@@ -4,13 +4,15 @@ prepare:
 	sudo apt-get update
 	sudo apt-get install -y ansible git
 
-common-software:
-	ansible-playbook common-software.yml -i local --ask-sudo-pass
+common-software: dep
+	ansible-playbook common-software.yml --ask-sudo-pass
 
 TAGS := always
-development:
-	ansible-galaxy install --force -r requirements.yml
+development: dep
 	ansible-playbook development.yml -i local --ask-sudo-pass --tags $(TAGS) -v
 
 dotfiles:
 	ansible-playbook dotfiles.yml -i local --ask-sudo-pass
+
+dep:
+	ansible-galaxy install --force -r requirements.yml

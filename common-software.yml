@@ -1,5 +1,10 @@
 ---
-- hosts: all
+- hosts: localhost
+  connection: local
+  become: yes
+
+  roles:
+    - terminator
 
   tasks:
     - name: Add PPA sources
@@ -9,21 +14,18 @@
         update_cache: no
       with_items:
         - '{{ ppa }}'
-      become: yes
 
     - block:
       - name: Add virtualbox key
         apt_key:
           url: '{{ virtualbox_key }}'
           state: present
-        become: yes
 
       - name: Install virtualbox
         apt:
           name: '{{ virtualbox_release_version }}'
           state: latest
           update_cache: yes
-        become: yes
 
       - name: Check if vagrant package is installed
         command: "dpkg-query --showformat='${Version}' --show vagrant"
@@ -46,7 +48,6 @@
           deb: '/tmp/vagrant.deb'
           state: present
         when: vagrant_version not in vagrant_check_install.stdout
-        become: yes
 
       - name: Remove vagrant deb package
         file:
@@ -60,13 +61,12 @@
       apt_key:
         url: https://dl.google.com/linux/linux_signing_key.pub
         state: present
-      become: yes
 
     - name: Install common deb packages
       apt:
         name: '{{ item }}'
         state: present
-      become: yes
+        update_cache: yes
       with_items:
         - '{{ common_deb_packages }}'
       ignore_errors: yes
