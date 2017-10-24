@@ -28,6 +28,7 @@ pip_packages:
   - pylint
   - ansible-lint
   - molecule
+  - yapf
 
 ruby_gems:
   - bundler
