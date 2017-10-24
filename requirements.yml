@@ -8,3 +8,6 @@
 
 - name: terminator
   src: https://github.com/vterdunov/ansible-terminator
+
+- name: sublime3
+  src: https://github.com/vterdunov/ansible-sublime3

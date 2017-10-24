@@ -9,10 +9,10 @@ common-software: dep
 
 TAGS := always
 development: dep
-	ansible-playbook development.yml -i local --ask-sudo-pass --tags $(TAGS) -v
+	ansible-playbook development.yml --ask-sudo-pass --tags $(TAGS) -v
 
 dotfiles:
-	ansible-playbook dotfiles.yml -i local --ask-sudo-pass
+	ansible-playbook dotfiles.yml --ask-sudo-pass
 
 dep:
 	ansible-galaxy install --force -r requirements.yml

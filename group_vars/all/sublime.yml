@@ -1,9 +1,0 @@
----
-sublime_text_ppa: 'ppa:webupd8team/sublime-text-3'
-sublime_packages_url_list:
-  - { url: 'https://github.com/SublimeGit/SublimeGit.git', name: 'SublimeGit' }
-  - { url: 'https://github.com/facelessuser/BracketHighlighter.git', name: 'BracketHighlighter'}
-  - { url: 'https://github.com/SublimeLinter/SublimeLinter3.git', name: 'SublimeLinter'}
-  - { url: 'https://github.com/SublimeLinter/SublimeLinter-rubocop.git', name: 'SublimeLinter-rubocop'}
-  - { url: 'https://github.com/Zeeker/sublime-GitConflictResolver.git', name: 'GitConflictResolver'}
-  - { url: 'https://github.com/sindresorhus/editorconfig-sublime.git', name: 'EditorConfig'}

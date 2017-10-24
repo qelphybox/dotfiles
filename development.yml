@@ -1,5 +1,6 @@
 ---
-- hosts: all
+- hosts: localhost
+  connection: local
   gather_facts: true
 
   tasks:
@@ -58,11 +59,7 @@
         - '{{ git_configs }}'
       tags: always
 
-    - block:
-      - include: tasks/sublime.yml
-      tags:
-        - always
-
   roles:
     - { role: rbenv, tags: ruby, become: yes }
     - { role: docker, tags: docker, become: yes }
+    - { role: sublime3, tags: sublime3 }
