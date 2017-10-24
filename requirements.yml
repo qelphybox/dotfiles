@@ -4,7 +4,7 @@
 
 - name: docker
   src: https://github.com/angstwad/docker.ubuntu
-  version: v2.5.2
+  version: v3.3.2
 
 - name: terminator
   src: https://github.com/vterdunov/ansible-terminator
