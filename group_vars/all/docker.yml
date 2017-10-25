@@ -1,0 +1,5 @@
+---
+# Set to 'yes' or 'true' to enable updates (sets 'latest' in apt module)
+update_docker_package: no
+
+pip_version_docker_compose: 1.15.0
