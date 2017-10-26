@@ -25,6 +25,7 @@
         pip:
           name: '{{ item }}'
           state: latest
+          executable: pip2
         with_items:
           - '{{ pip_packages }}'
       become: yes
