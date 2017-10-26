@@ -26,7 +26,6 @@ common_deb_packages:
 
 pip_packages:
   - pylint
-  - molecule
   - yapf
 
 ruby_gems:
