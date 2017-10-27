@@ -13,7 +13,7 @@
       become: yes
       when: ansible_distribution == 'Ubuntu'
       tags:
-        - always
+        - debs
 
     - block:
       - name: Install pip
@@ -29,7 +29,7 @@
         with_items:
           - '{{ pip_packages }}'
       become: yes
-      tags: always
+      tags: pip
 
     - block:
       - name: Set no doc for gems
@@ -58,7 +58,7 @@
         value: '{{ item.value }}'
       with_items:
         - '{{ git_configs }}'
-      tags: always
+      tags: git
 
   roles:
     - { role: rbenv, tags: ruby, become: yes }
