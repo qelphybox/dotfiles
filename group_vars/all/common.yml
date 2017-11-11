@@ -35,6 +35,10 @@ ruby_gems:
   - ruby-lint
   - sqlint
   - rubocop
+  - reek
+  - rcodetools
+  - ruby-debug-ide
+  - debase
 
 ppa:
   - 'ppa:ricotz/docky'
