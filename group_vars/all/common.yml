@@ -1,5 +1,5 @@
 ---
-username: vterdunov
+username: "{{ lookup('env', 'USER') }}"
 email: mail2slick@gmail.com
 
 # list of deb packages
