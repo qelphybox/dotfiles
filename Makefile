@@ -1,3 +1,5 @@
+TAGS := always
+
 prepare:
 	sudo apt-get install software-properties-common
 	sudo apt-add-repository -y ppa:ansible/ansible
@@ -5,9 +7,8 @@ prepare:
 	sudo apt-get install -y ansible git
 
 common-software: dep
-	ansible-playbook common-software.yml --ask-sudo-pass
+	ansible-playbook common-software.yml --ask-sudo-pass --tags $(TAGS) -v
 
-TAGS := always
 development: dep
 	ansible-playbook development.yml --ask-sudo-pass --tags $(TAGS) -v
 

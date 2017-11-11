@@ -4,7 +4,7 @@
   gather_facts: true
 
   tasks:
-    - name: Install packages
+    - name: Install development packages
       apt:
         name: '{{ item }}'
         state: latest
@@ -13,7 +13,7 @@
       become: yes
       when: ansible_distribution == 'Ubuntu'
       tags:
-        - debs
+        - deb
 
     - block:
       - name: Install pip
@@ -49,7 +49,9 @@
         ignore_errors: yes
         with_items:
           - '{{ ruby_gems }}'
-      tags: ruby
+      tags:
+        - ruby
+        - gem
 
     - name: Set git configuration
       git_config:
