@@ -4,10 +4,11 @@
 
 - name: docker
   src: https://github.com/angstwad/docker.ubuntu
-  version: v3.3.2
+  version: v3.3.4
 
 - name: terminator
   src: https://github.com/vterdunov/ansible-terminator
+  version: master
 
 - name: sublime3
   src: https://github.com/vterdunov/ansible-sublime3
